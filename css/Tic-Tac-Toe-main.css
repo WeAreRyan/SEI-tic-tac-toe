@@ -8,3 +8,18 @@ H1 {
     text-align: center;
     margin-top: 50px;
 }
+
+#gameboard {
+    width: 500px;
+    height: 500px;
+    border: solid blue 2px;
+    margin: auto;
+}
+
+button[type=reset] {
+    background-color: gray;
+    color: blue;
+    text-decoration: line-through;
+    position: relative;
+    margin: auto;
+}
