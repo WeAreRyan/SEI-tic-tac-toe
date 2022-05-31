@@ -7,13 +7,15 @@
 H1 {
     text-align: center;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #gameboard {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     border: solid blue 2px;
     margin: auto;
+    justify-content: center;
 }
 
 button[type=reset] {
@@ -21,5 +23,14 @@ button[type=reset] {
     color: blue;
     text-decoration: line-through;
     position: relative;
-    margin: auto;
+    margin: 0 auto;
+}
+
+#button1, #button2, #button3, #button4, #button5, #button6, #button7, #button8, #button9{
+    width: 100px;
+    height: 100px;
+    border: solid black 1px;
+    margin: 0 auto;
+    display: inline-block; 
+    text-align: center;
 }
