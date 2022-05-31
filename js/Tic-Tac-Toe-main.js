@@ -3,10 +3,13 @@ console.log("JS IS WORKING!!!")
 
 
 /*----- constants -----*/
-//  const BOX_STATUS = [O, X];
+
 const X = "X"
 const O = "O"
 const resetButton = document.querySelector("reset");
+const results = document.getElementById("results");
+const activePlayer = document.getElementById("activePlayer");
+
 
 
 
@@ -23,6 +26,9 @@ let columnTwo = [box2status, box5status, box8status];
 let columnThree = [box3status, box6status, box9status];
 let diagonalOne = [box1status, box5status, box9status];
 let diagonalTwo = [box3status, box5status, box1status];
+
+let boardState = [box1status, box2status, box3status, box4status, box5status, box6status, box7status, box8status, box9status];
+
 
 /*----- cached element references -----*/
 
@@ -55,6 +61,7 @@ box9.addEventListener("click", handleClick);
 /*----- functions -----*/
 function gameStart() {
     player = 1;
+    getActivePlayer()
 }
 
 
@@ -169,6 +176,7 @@ function handleClick(evt) {
         winCheck();
         player = 1;
     }
+    getActivePlayer()
 }
 
 // UPDATE GAME STATUS
@@ -181,62 +189,73 @@ function gameStatus() {
     columnThree = [box3status, box6status, box9status];
     diagonalOne = [box1status, box5status, box9status];
     diagonalTwo = [box3status, box5status, box1status];
+    boardState = [box1status, box2status, box3status, box4status, box5status, box6status, box7status, box8status, box9status]
+}
+
+//Active player function
+
+function getActivePlayer() {
+    if (player === 1) {
+        activePlayer.innerHTML = "Current player is X";
+    } else if (player === 2) {
+        activePlayer.innerHTML = "Current player is O"
+    }
 }
 
 
 // WIN CONDITION CHECK
 function winCheck() {
+    gameStatus();
     if (box1status === X && box2status === X && box3status === X) {
-        console.log("Player 1 Wins!");
+        results.innerText = "Player 1 Wins!";
     } else if (box1status === O && box2status === O && box3status === O) {
-        console.log("Player 2 Wins!");
+        results.innerText = "Player 2 Wins!";
 
     } else if (box4status === X && box5status === X && box6status === X) {
-        console.log("Player 1 Wins!");
+        results.innerText = "Player 1 Wins!";
     } else if (box4status === O && box5status === O && box6status === O) {
-        console.log("Player 2 Wins!");
+        results.innerText = "Player 2 Wins!";
 
     } else if (box7status === X && box8status === X && box9status === X) {
-        console.log("Player 1 Wins!");
+        results.innerText = "Player 1 Wins!";
     } else if (box7status === O && box8status === O && box9status === O) {
-        console.log("Player 2 Wins!");
+        results.innerText = "Player 2 Wins!";
 
 
 
     } else if (box1status === X && box4status === X && box7status === X) {
-        console.log("Player 1 Wins!");
+        results.innerText = "Player 1 Wins!";
     } else if (box1status === O && box4status === O && box7status === O) {
-        console.log("Player 2 Wins!");
+        results.innerText = "Player 2 Wins!";
 
     } else if (box2status === X && box5status === X && box8status === X) {
-        console.log("Player 1 Wins!");
+        results.innerText = "Player 1 Wins!";
     } else if (box2status === O && box5status === O && box8status === O) {
-        console.log("Player 2 Wins!");
+        results.innerText = "Player 2 Wins!";
 
     } else if (box3status === X && box6status === X && box9status === X) {
-        console.log("Player 1 Wins!");
+        results.innerText = "Player 1 Wins!";
     } else if (box3status === O && box6status === O && box9status === O) {
-        console.log("Player 2 Wins!");
+        results.innerText = "Player 2 Wins!";
 
 
     } else if (box1status === X && box5status === X && box9status === X) {
-        console.log("Player 1 Wins!");
+        results.innerText = "Player 1 Wins!";
     } else if (box1status === O && box5status === O && box9status === O) {
-        console.log("Player 2 Wins!");
+        results.innerText = "Player 2 Wins!";
 
     } else if (box3status === X && box5status === X && box7status === X) {
-        console.log("Player 1 Wins!");
+        results.innerText = "Player 1 Wins!";
     } else if (box3status === O && box5status === O && box7status === O) {
-        console.log("Player 2 Wins!");
+        results.innerText = "Player 2 Wins!";
+    } else if (!boardState.includes(undefined)) {
+        results.innerText = "You're both too clever";
     }
-
-
-
-
-
-
-
 }
+
+
+
+
 
 // if (rowOne === ['X', 'X', 'X']) {
 //     console.log("player 1 wins")
@@ -244,7 +263,7 @@ function winCheck() {
 
 
 // RESET BUTTON FUNCTIONALITY
-reset.onclick = function() {
+reset.onclick = function () {
     resetGame();
 }
 // RESET GAME FUNCTION
