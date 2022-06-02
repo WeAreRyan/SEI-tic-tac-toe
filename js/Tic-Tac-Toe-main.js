@@ -268,7 +268,16 @@ reset.onclick = function () {
 }
 // RESET GAME FUNCTION
 function resetGame() {
-    box1status, box2status, box3status, box4status, box5status, box6status, box7status, box8status, box9status = undefined;
+    box1status = undefined;
+    box2status = undefined;
+    box3status = undefined;
+    box4status = undefined;
+    box5status = undefined;
+    box6status = undefined;
+    box7status = undefined;
+    box8status = undefined;
+    box9status = undefined;
+    
     player = 1;
     box1.innerHTML = "";
     box2.innerHTML = "";
@@ -279,6 +288,8 @@ function resetGame() {
     box7.innerHTML = "";
     box8.innerHTML = "";
     box9.innerHTML = "";
+    gameStatus();
+    gameStart();
 }
 
 

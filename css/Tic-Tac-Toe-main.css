@@ -3,11 +3,20 @@
     margin: 0;
     padding: 0;
 }
-
-H1 {
+body {
+    background-image: url("https://images.unsplash.com/photo-1543722530-d2c3201371e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80")
+}
+h1 {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
 }
 
 #gameboard {
@@ -21,12 +30,16 @@ H1 {
     background-color: rgb(198, 90, 169);
 }
 
-button[type=reset] {
-    background-color: gray;
-    color: blue;
-    text-decoration: line-through;
-    position: static;
-    margin: 0 auto;
+button {
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 30px;
+    height: 80px;
+    width: 200px;
+    border: solid black 5px;
+    border-radius: 7%;
+    margin: auto;
+    display: block;
 }
 
 #button1, #button2, #button3, #button4, #button5, #button6, #button7, #button8, #button9{
@@ -49,4 +62,9 @@ button[type=reset] {
     font-size: 40px;
     text-align: center;
 
+}
+
+p {
+    margin-top: 15px;
+    color: white;
 }
