@@ -1,6 +1,3 @@
-console.log("JS IS WORKING!!!")
-
-
 
 /*----- constants -----*/
 
@@ -10,23 +7,9 @@ const resetButton = document.querySelector("reset");
 const results = document.getElementById("results");
 const activePlayer = document.getElementById("activePlayer");
 
-
-
-
-
-
 /*----- app's state (variables) -----*/
 
 let box1status, box2status, box3status, box4status, box5status, box6status, box7status, box8status, box9status;
-let rowOne = [box1status, box2status, box3status];
-let rowTwo = [box4status, box5status, box6status];
-let rowThree = [box7status, box8status, box9status];
-let columnOne = [box1status, box4status, box7status];
-let columnTwo = [box2status, box5status, box8status];
-let columnThree = [box3status, box6status, box9status];
-let diagonalOne = [box1status, box5status, box9status];
-let diagonalTwo = [box3status, box5status, box1status];
-
 let boardState = [box1status, box2status, box3status, box4status, box5status, box6status, box7status, box8status, box9status];
 
 
@@ -65,8 +48,7 @@ function gameStart() {
     results.innerText = "Who will win?";
 }
 
-
-
+// Interactive game functions
 function handleClick(evt) {
     if (player === 1 && evt.target === box1 && box1status === undefined) {
         box1.innerHTML = "X";
@@ -180,21 +162,14 @@ function handleClick(evt) {
     getActivePlayer()
 }
 
+
 // UPDATE GAME STATUS
 function gameStatus() {
-    rowOne = [box1status, box2status, box3status];
-    rowTwo = [box4status, box5status, box6status];
-    rowThree = [box7status, box8status, box9status];
-    columnOne = [box1status, box4status, box7status];
-    columnTwo = [box2status, box5status, box8status];
-    columnThree = [box3status, box6status, box9status];
-    diagonalOne = [box1status, box5status, box9status];
-    diagonalTwo = [box3status, box5status, box1status];
     boardState = [box1status, box2status, box3status, box4status, box5status, box6status, box7status, box8status, box9status]
 }
 
-//Active player function
 
+//Active player function
 function getActivePlayer() {
     if (player === 1) {
         activePlayer.innerHTML = "Current player is X";
@@ -221,8 +196,6 @@ function winCheck() {
         results.innerText = "Player 1 Wins!";
     } else if (box7status === O && box8status === O && box9status === O) {
         results.innerText = "Player 2 Wins!";
-
-
 
     } else if (box1status === X && box4status === X && box7status === X) {
         results.innerText = "Player 1 Wins!";
@@ -254,15 +227,6 @@ function winCheck() {
     }
 }
 
-
-
-
-
-// if (rowOne === ['X', 'X', 'X']) {
-//     console.log("player 1 wins")
-// }
-
-
 // RESET BUTTON FUNCTIONALITY
 reset.onclick = function () {
     resetGame();
@@ -278,7 +242,6 @@ function resetGame() {
     box7status = undefined;
     box8status = undefined;
     box9status = undefined;
-    
     player = 1;
     box1.innerHTML = "";
     box2.innerHTML = "";
