@@ -4,19 +4,30 @@
     padding: 0;
 }
 body {
-    background-image: url("https://images.unsplash.com/photo-1543722530-d2c3201371e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80")
+    background-image: url("https://images.unsplash.com/photo-1543722530-d2c3201371e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80");
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-color: black;
+     
 }
 h1 {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
     color: white;
+    Font-size: 70px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 4px 4px red;
 }
 
 h2 {
     text-align: center;
     margin-bottom: 30px;
     color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 40px;
+    text-shadow: 2px 2px black;
 }
 
 #gameboard {
@@ -67,4 +78,6 @@ button {
 p {
     margin-top: 15px;
     color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 4px 4px black;
 }

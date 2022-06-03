@@ -62,6 +62,7 @@ box9.addEventListener("click", handleClick);
 function gameStart() {
     player = 1;
     getActivePlayer()
+    results.innerText = "Who will win?";
 }
 
 
@@ -288,6 +289,7 @@ function resetGame() {
     box7.innerHTML = "";
     box8.innerHTML = "";
     box9.innerHTML = "";
+    results.innerText = "";
     gameStatus();
     gameStart();
 }
